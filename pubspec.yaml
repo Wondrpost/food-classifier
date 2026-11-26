@@ -1,0 +1,36 @@
+name: food_classifier_app
+description: "Aplikasi identifikasi makanan dari gambar menggunakan on-device machine learning (TensorFlow Lite / LiteRT)."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Kriteria 1: Pengambilan gambar
+  image_picker: ^1.1.2
+  image_cropper: ^8.0.2
+
+  # Kriteria 2: Machine learning (LiteRT / TensorFlow Lite)
+  tflite_flutter: ^0.12.1
+  image: ^4.2.0
+
+  # Kriteria 3: Halaman prediksi + Web API (MealDB)
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/models/food_classifier.tflite
+    - assets/models/labels.txt
+    - assets/images/
